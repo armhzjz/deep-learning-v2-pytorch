@@ -51,11 +51,6 @@ class NeuralNetwork(object):
             delta_weights_i_h, delta_weights_h_o = self.backpropagation(final_outputs, hidden_outputs, X, y, 
                                                                         delta_weights_i_h, delta_weights_h_o)
         self.update_weights(delta_weights_i_h, delta_weights_h_o, n_records)
-        
-        if self.lr > 0.001:
-            self.lr *= 0.996
-        else:
-            self.lr = 0.001
 
 
     def forward_pass_train(self, X):
@@ -153,7 +148,7 @@ class NeuralNetwork(object):
 #########################################################
 # Set your hyperparameters here
 ##########################################################
-iterations = 1000
+iterations = 2000
 learning_rate = 0.8
-hidden_nodes = 10
+hidden_nodes = 15
 output_nodes = 1
